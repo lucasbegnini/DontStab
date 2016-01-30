@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class SoundController : MonoBehaviour {
 	[SerializeField]
 	AudioClip BackgroundGameSound, Stabsound, BackgroundMenuSound,HeartBeatSound,ScreamSound, clickSound;
@@ -8,7 +8,9 @@ public class SoundController : MonoBehaviour {
 	AudioSource sfx, bgsound, heartbeat;
 	
 	AudioListener audio;
-	
+
+	[SerializeField]
+	Sprite Mute, noMute;
 	bool isMute;
 	// Use this for initialization
 	void Start () {
@@ -20,13 +22,18 @@ public class SoundController : MonoBehaviour {
 		heartbeat.playOnAwake = false;
 		bgSoundPlay();
 		
-/*		if (PlayerPrefs.GetInt("Mute") == 1) 
+		if (Application.loadedLevelName.Equals ("menu")) 
+		{
+			PlayerPrefs.SetInt("Mute",0);
+		}
+
+		if (PlayerPrefs.GetInt("Mute") == 1) 
 		{
 			AudioListener.volume = 0.0f;
 		} else {
 			AudioListener.volume = 1.0f;
 		}
-		*/
+
 
 	}
 	
@@ -85,10 +92,12 @@ public class SoundController : MonoBehaviour {
 			isMute = false;
 			PlayerPrefs.SetInt("Mute", 0);
 			AudioListener.volume = 1.0f;
+			GameObject.FindGameObjectWithTag("SoundButton").GetComponent<Image>().sprite = noMute;
 		} else {
 			isMute = true;
 			PlayerPrefs.SetInt("Mute", 1);
 			AudioListener.volume = 0.0f;
+			GameObject.FindGameObjectWithTag("SoundButton").GetComponent<Image>().sprite = Mute;
 		}
 		
 	}
