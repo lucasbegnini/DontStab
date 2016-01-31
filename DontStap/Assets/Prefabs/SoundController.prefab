@@ -40,11 +40,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BackgroundGameSound: {fileID: 8300000, guid: 3ac30d5d05f3bf149a8fc538365d983d, type: 3}
-  Stabsound: {fileID: 8300000, guid: dba646a8e8d8531428c104e72739bde5, type: 3}
+  Stabsound: {fileID: 8300000, guid: d86d8d278138c18488d613af44a243b0, type: 3}
   BackgroundMenuSound: {fileID: 8300000, guid: 4d64380764088f34ca721cc23fd80058, type: 3}
   HeartBeatSound: {fileID: 8300000, guid: d8d0e02a9a48fd3429780b55e9d24ce9, type: 3}
   ScreamSound: {fileID: 8300000, guid: 27aed4efa74ec5443aaaf195af7a97d2, type: 3}
   clickSound: {fileID: 8300000, guid: 28d65af9a9898554da7a9e1f08cf1f71, type: 3}
+  wrongStab: {fileID: 8300000, guid: 00dc82dfce6c7844ba8c3e5342be862f, type: 3}
+  Mute: {fileID: 21300000, guid: 84867473b374c664e885a678b22040c7, type: 3}
+  noMute: {fileID: 21300000, guid: c346f7688f2c2bf4397d6d7d28277b0a, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 public class SoundController : MonoBehaviour {
 	[SerializeField]
-	AudioClip BackgroundGameSound, Stabsound, BackgroundMenuSound,HeartBeatSound,ScreamSound, clickSound;
+	AudioClip BackgroundGameSound, Stabsound, BackgroundMenuSound,HeartBeatSound,ScreamSound, clickSound, wrongStab;
 	
 	AudioSource sfx, bgsound, heartbeat;
 	
@@ -65,6 +65,12 @@ public class SoundController : MonoBehaviour {
 		
 	}
 
+	public void Stabwrong()
+	{
+		sfx.clip = wrongStab;
+		sfx.Play();
+		
+	}
 	public void Click()
 	{
 		sfx.clip = clickSound;
