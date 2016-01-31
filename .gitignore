@@ -3,3 +3,7 @@ DontStap/Assets/Prefabs/PanelGameOver.prefab
 DontStap/Assets/Scenes/menu.unity
 *.cs
 DontStap/Assets/Scenes/menu.unity
+*.asset
+DontStap/ProjectSettings/GraphicsSettings.asset
+DontStap/ProjectSettings/GraphicsSettings.asset
+*.asset

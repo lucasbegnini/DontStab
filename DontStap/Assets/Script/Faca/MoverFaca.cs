@@ -3,8 +3,7 @@ using System.Collections;
 
 public class MoverFaca : MonoBehaviour {
 
-	[SerializeField]
-	Vector3 goTo, goBack;
+	public Vector3 goTo, goBack;
     [SerializeField]
 	float timeToGo, delay;
 	// Use this for initialization
