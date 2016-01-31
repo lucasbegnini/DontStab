@@ -56,7 +56,7 @@ public class TouchController : MonoBehaviour {
             endPos.Set(0, 0);
             directionChosen = false;
         }
-        if (Mathf.Abs(gameObject.transform.position.x) == 3 || Mathf.Abs(gameObject.transform.position.y) == 3)
+        if (Mathf.Abs(gameObject.transform.position.x) < 1 || Mathf.Abs(gameObject.transform.position.y) < 1)
         {
             gameObject.MoveTo(Vector3.zero, 1f, 1f);
         }

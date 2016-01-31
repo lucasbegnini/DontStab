@@ -4,12 +4,10 @@ using System.Collections;
 public class MoverFaca : MonoBehaviour {
 
 	public Vector3 goTo, goBack;
+    public GameObject sombra;
+
     [SerializeField]
-	float timeToGo, delay;
-	// Use this for initialization
-	void Start () {
-    
-	}
+	float timeToGo;
 	
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,10 +15,10 @@ public class MoverFaca : MonoBehaviour {
         if (other.tag == "Center")
         {
             Return();
-            Debug.Log(other.tag);
+            sombra.SetActive(false);
         }
     }
-	public void Stab()
+	public void Stab(float delay)
 	{
 		gameObject.MoveTo(goTo, timeToGo, delay);
 	}
