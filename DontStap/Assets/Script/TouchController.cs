@@ -27,27 +27,26 @@ public class TouchController : MonoBehaviour {
 				directionChosen = true;
 				break;
 			}
-
 		}
 		if (directionChosen) {
-			if((startPos.x > endPos.x) && (Mathf.Abs(startPos.y - endPos.y) < offset))
+			if((startPos.x > endPos.x) && (Mathf.Abs(endPos.y - startPos.y) < Mathf.Abs(startPos.x - endPos.x)))
 			{
                 //foi pra esquerda
                 gameObject.MoveTo((new Vector3(-3.0f, 0, 0)), 0.5f,0);
 			}
-			if((startPos.x < endPos.x) && (Mathf.Abs(startPos.y - endPos.y) < offset))
+			if((startPos.x < endPos.x) && (Mathf.Abs(endPos.y - startPos.y) < Mathf.Abs(startPos.x - endPos.x)))
 			{
                 //foi pra direita
                 gameObject.MoveTo((new Vector3(3.0f, 0, 0)), 0.5f, 0);
 
             }
-            if ((startPos.y < endPos.y) && (Mathf.Abs(startPos.x - endPos.x) < offset))
+            if ((startPos.y < endPos.y) && (Mathf.Abs(endPos.y - startPos.y) > Mathf.Abs(startPos.x - endPos.x)))
 			{
                 //foi pra cima
                 gameObject.MoveTo((new Vector3(0, 3.0f, 0)), 0.5f, 0);
 
             }
-            if ((startPos.y > endPos.y) && (Mathf.Abs(startPos.x - endPos.x) < offset))
+            if ((startPos.y > endPos.y) && (Mathf.Abs(endPos.y - startPos.y) > Mathf.Abs(startPos.x - endPos.x)))
 			{
                 //foi pra baixo
                 gameObject.MoveTo((new Vector3(0, -3.0f, 0)), 0.5f, 0);
@@ -56,23 +55,10 @@ public class TouchController : MonoBehaviour {
             endPos.Set(0, 0);
             directionChosen = false;
         }
-        if (Mathf.Abs(gameObject.transform.position.x) < 1 || Mathf.Abs(gameObject.transform.position.y) < 1)
+        if (Mathf.Abs(gameObject.transform.position.x) == 3 || Mathf.Abs(gameObject.transform.position.y) == 3)
         {
-            gameObject.MoveTo(Vector3.zero, 1f, 1f);
+            gameObject.MoveTo(Vector3.zero, 0.5f, 0f);
         }
         
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "CAPIROTAGEM")
-        {
-            Return();
-            Debug.Log(other.tag);
-        }
-    }
-    public void Return()
-    {
-        gameObject.MoveTo(Vector3.zero, 1f, 1f);
     }
 }

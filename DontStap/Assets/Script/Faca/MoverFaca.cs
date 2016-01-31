@@ -20,10 +20,12 @@ public class MoverFaca : MonoBehaviour {
     }
 	public void Stab(float delay)
 	{
+        gameObject.FadeTo(1f, 0.1f, 0f);
 		gameObject.MoveTo(goTo, timeToGo, delay);
 	}
     public void Return()
     {
-        gameObject.MoveTo(goBack, 0.5f, 0.5f);
+        gameObject.FadeTo(0.0f, 0.2f, 0);
+        gameObject.MoveTo(goBack, 0.1f, 0.2f);
     }
 }
